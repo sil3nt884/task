@@ -34,9 +34,8 @@ import cors from 'cors'
     })
 
     app.get("/timetable",async (req, res) => {
-        const data = await  db.getData()
-        console.log(data)
-        return res.status(200).send(JSON.stringify(data.tasks))
+        const data = await  db.generateTasks()
+        return res.status(200).send(JSON.stringify(data))
     })
 
 

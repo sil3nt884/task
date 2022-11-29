@@ -19,7 +19,7 @@ const week3 = [15,16,17,18,19, 20, 21]
 const week4 = [22,23,24,25,26,27,28,29, 30, 31]
 const weeks =[week1, week2,week3,week4]
 
-const generateTasks = () => {
+export const generateTasks = () => {
    const day = new Date().getDate()
 
    const [selectedWeek] =weeks.map((week, index) => {
@@ -121,7 +121,6 @@ const generateTasks = () => {
 export const readData = async () => {
    await db.read()
    db.data ||= { dinners: [],tasks: []}
-   db.data.tasks = generateTasks()
 };
 export const save =  () => db.write()
 export const addDinnerItems  = async (data) => {
