@@ -1,5 +1,5 @@
 export type DinnerItem = {
     name: string
-    URL: string
+    url: string
     id: number;
 }
