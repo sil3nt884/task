@@ -10,6 +10,8 @@ import cors from 'cors'
     await  db.readData();
     app.use(cors())
     app.use(bodyParser.json())
+    app.use(express.static('../build'))
+
     app.post('/addDinner', async (req, res)=> {
         const body = req.body
         if(!body) {
