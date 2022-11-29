@@ -66,7 +66,7 @@ export const DinnerItemForm = () => {
            }
            console.log('sending', data)
            try {
-               await fetch('http://localhost:3001/addDinner', {method: "POST", body: JSON.stringify(data), headers: {
+               await fetch('/addDinner', {method: "POST", body: JSON.stringify(data), headers: {
                      "Content-Type" : "application/json"
                    }})
                 window.location.href = "/"
