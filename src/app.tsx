@@ -4,7 +4,8 @@ import {Todo} from "./components/todo/Todo";
 
 import {DinnerMenu} from "./components/DinnerMenu/DinnerMenu";
 
-
+// @ts-ignore
+import DocumentMeta  from 'react-document-meta';
 
 const fetchData = async () => {
     const promises = [
@@ -43,14 +44,17 @@ export const App = () : JSX.Element => {
     }, [])
 
 
-    return <Container>
-        <section>
-            <DinnerMenu dinnerItems={dinnerItems}></DinnerMenu>
-        </section>
-        <section>
-            <Todo list={lists}></Todo>
-        </section>
-    </Container>
+    return <DocumentMeta name={"viewport"} content={"width=device-width, initial-scale=1.0"}>
+        <Container>
+            <section>
+                <DinnerMenu dinnerItems={dinnerItems}></DinnerMenu>
+            </section>
+            <section>
+                <Todo list={lists}></Todo>
+            </section>
+        </Container>
+    </DocumentMeta>
+
 }
 
 
