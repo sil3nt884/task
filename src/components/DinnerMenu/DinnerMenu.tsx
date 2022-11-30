@@ -15,7 +15,7 @@ export  const DinnerMenu  =({dinnerItems}: {dinnerItems: DinnerItem[]}) => {
     display: grid;
     top: -12px;
     position: relative;
-    top: -36px;
+    top: -50.7px;
     left: 97%;
     border-radius: 4px
     &:active {
