@@ -17,7 +17,7 @@ const week1 = [1,2,3,4,6,7]
 const week2 = [8,9,10,12,13, 14]
 const week3 = [15,16,17,18,19, 20, 21]
 const week4 = [22,23,24,25,26,27,28,29, 30, 31]
-const weeks =[week1, week2,week3,week4]
+const weeks =[week1,week2,week3,week4]
 
 export const generateTasks = () => {
    const day = new Date().getDate()
@@ -27,10 +27,7 @@ export const generateTasks = () => {
       if(foundDay){
          return index
       }
-      else {
-         return  0
-      }
-   }).filter(e => e);
+   }).filter(e => (typeof e)  !== 'undefined');
 
    const confirmedWeek = selectedWeek +1
    const tasks=
@@ -115,6 +112,21 @@ export const generateTasks = () => {
 
 }
 
+export const removeDinner = async (id) => {
+   await db.read()
+   const [dinnerToRemove] = db.data.dinners
+       .map((dinner, index) =>  {
+          if(dinner.id === id) {
+            return index
+          }
+          else {
+             return  undefined
+          }
+       })
+       .filter(index => (typeof index)  !== 'undefined')
+       db.data.dinners.splice(dinnerToRemove, 1)
+       console.log('dinner removed', dinnerToRemove)
+}
 
 
 
@@ -124,7 +136,6 @@ export const readData = async () => {
 };
 export const save =  () => db.write()
 export const addDinnerItems  = async (data) => {
-   console.log(data)
    await db.read()
    data.id = uuid()
    db.data.dinners.push(data)
@@ -136,4 +147,7 @@ export const addTask  = async (data) => {
    db.data.task.push(data)
 }
 
-export const getData = () => db.data
+export const getData = async () => {
+    await db.read();
+    return db.data
+}

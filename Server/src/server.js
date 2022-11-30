@@ -23,6 +23,18 @@ import cors from 'cors'
     })
 
 
+    app.get('/removeDinner/:id', async (req, res)=> {
+        const {id} = req.params
+        if(!id) {
+            return res.status(401).send("no body given")
+        }
+        await db.removeDinner(id)
+        db.save()
+        return res.status(200).send('OK')
+    })
+
+
+
     app.post('/addTask', async (req, res)=> {
         const body = req.body
         if(!body) {
