@@ -16,11 +16,17 @@ export  const DinnerMenu  =({dinnerItems}: {dinnerItems: DinnerItem[]}) => {
     top: -12px;
     position: relative;
     top: -36px;
-    left: 571px;
+    left: 97%;
     border-radius: 4px
     &:active {
          outline: none;
          box-shadow: 0 0 0 6px white;
+    }
+    @media only screen and (max-width: 800px) {
+       left: 95%;
+    }
+    @media only screen and (max-width: 500px) {
+       left: 90%;
     }
     
     `
