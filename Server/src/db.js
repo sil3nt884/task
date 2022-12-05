@@ -13,7 +13,7 @@ const file = join(__dirname, 'db.json')
 const adapter = new JSONFile(file)
 const db = new Low(adapter)
 
-const week1 = [1,2,3,4,6,7]
+const week1 = [1,2,3,4,5,6,7]
 const week2 = [8,9,10,12,13, 14]
 const week3 = [15,16,17,18,19, 20, 21]
 const week4 = [22,23,24,25,26,27,28,29, 30, 31]
@@ -34,19 +34,19 @@ export const generateTasks = () => {
       {
          1: [
             {
-               name: "Ricky",
+               name: "Chloe",
                action: "Kitchen",
 
             },
             {
-               name: "Jacob",
+               name: "Ricky",
                action: "Floors",
 
             }
 
           ,
             {
-               name: "Chloe",
+               name: "Jacob",
                action: "Washing",
 
             }
@@ -87,7 +87,7 @@ export const generateTasks = () => {
         ],
         4: [
            {
-              name: "Ricky",
+              name: "Chloe",
               action: "Kitchen",
 
            },
@@ -99,7 +99,7 @@ export const generateTasks = () => {
 
            ,
            {
-              name: "Chloe",
+              name: "Ricky",
               action: "Washing",
 
            }
