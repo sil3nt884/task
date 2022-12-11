@@ -14,7 +14,7 @@ const adapter = new JSONFile(file)
 const db = new Low(adapter)
 
 const week1 = [1,2,3,4,5,6,7]
-const week2 = [8,9,10,12,13, 14]
+const week2 = [8,9,10,11,12,13,14]
 const week3 = [15,16,17,18,19, 20, 21]
 const week4 = [22,23,24,25,26,27,28,29, 30, 31]
 const weeks =[week1,week2,week3,week4]
